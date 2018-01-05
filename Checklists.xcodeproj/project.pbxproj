@@ -13,7 +13,7 @@
 		B70874AC1FFF0B040066D55D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70874AA1FFF0B040066D55D /* LaunchScreen.storyboard */; };
 		B70874B41FFF0BF30066D55D /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70874B31FFF0BF30066D55D /* ChecklistViewController.swift */; };
 		B7D831281FFF232300A241BC /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D831271FFF232300A241BC /* ChecklistItem.swift */; };
-		B7D8312E1FFF31A900A241BC /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8312D1FFF31A900A241BC /* AddItemViewController.swift */; };
+		B7D8312E1FFF31A900A241BC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8312D1FFF31A900A241BC /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		B70874AD1FFF0B040066D55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B70874B31FFF0BF30066D55D /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		B7D831271FFF232300A241BC /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
-		B7D8312D1FFF31A900A241BC /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		B7D8312D1FFF31A900A241BC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				B70874B31FFF0BF30066D55D /* ChecklistViewController.swift */,
-				B7D8312D1FFF31A900A241BC /* AddItemViewController.swift */,
+				B7D8312D1FFF31A900A241BC /* ItemDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B70874B41FFF0BF30066D55D /* ChecklistViewController.swift in Sources */,
-				B7D8312E1FFF31A900A241BC /* AddItemViewController.swift in Sources */,
+				B7D8312E1FFF31A900A241BC /* ItemDetailViewController.swift in Sources */,
 				B7D831281FFF232300A241BC /* ChecklistItem.swift in Sources */,
 				B70874A21FFF0B040066D55D /* AppDelegate.swift in Sources */,
 			);
