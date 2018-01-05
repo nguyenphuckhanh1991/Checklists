@@ -42,16 +42,6 @@ class ChecklistViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     // MARK: Button Function
-    @IBAction func addItem() {
-        let newRowIndex = items.count
-        let item = ChecklistItem()
-        item.text = "I am a new row"
-        item.checked = false
-        items.append(item)
-        let indexPath = IndexPath(row: newRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-    }
     // MARK: Function
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         if item.checked {
@@ -63,6 +53,13 @@ class ChecklistViewController: UIViewController {
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddItem" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! AddItemViewController
+            controller.delegate = self
+        }
     }
 }
 // MARK: UITableViewDataSource
@@ -96,3 +93,17 @@ extension ChecklistViewController: UITableViewDelegate {
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
 }
+extension ChecklistViewController: AddItemViewControllerDelegate {
+    func addItemControllerDidCancel(_ controller: AddItemViewController) {
+        dismiss(animated: true, completion: nil)   
+    }
+    func addItemController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
+        let newRowIndex = items.count
+        items.append(item)
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        dismiss(animated: true, completion: nil)
+    }
+}
+
