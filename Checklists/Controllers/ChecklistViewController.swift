@@ -10,6 +10,7 @@ import UIKit
 
 class ChecklistViewController: UIViewController {
     var items: [ChecklistItem]
+    var checklist: Checklist!
     required init?(coder aDecoder: NSCoder) {
         items = [ChecklistItem]() // add this line
         super.init(coder: aDecoder)
@@ -18,6 +19,7 @@ class ChecklistViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = checklist.name
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -68,7 +70,7 @@ class ChecklistViewController: UIViewController {
         let path = dataFilePath()
         if let data = try? Data(contentsOf: path) {
             let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-            items = unarchiver.decodeBool(forKey: "ChecklistItems") as! [ChecklistItem]
+            items = unarchiver.decodeObject(forKey: "ChecklistItems") as! [ChecklistItem]
             unarchiver.finishDecoding()
         }
     }
@@ -85,6 +87,14 @@ extension ChecklistViewController: UITableViewDataSource {
         configureCheckmark(for: cell, with: item)
         return cell
     }
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCellEditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+        saveChecklistItems()
+    }
 }
 // MARK: UITableViewDelegate
 extension ChecklistViewController: UITableViewDelegate {
@@ -95,14 +105,6 @@ extension ChecklistViewController: UITableViewDelegate {
             configureCheckmark(for: cell, with: item)
         }
         tableView.deselectRow(at: indexPath, animated: true)
-        saveChecklistItems()
-    }
-    func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCellEditingStyle,
-                   forRowAt indexPath: IndexPath) {
-        items.remove(at: indexPath.row)
-        let indexPaths = [indexPath]
-        tableView.deleteRows(at: indexPaths, with: .automatic)
         saveChecklistItems()
     }
 }
