@@ -79,10 +79,10 @@
 		B70874B51FFF0C0C0066D55D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A84C89E1200206F100822C55 /* AllListsViewController.swift */,
 				B70874B31FFF0BF30066D55D /* ChecklistViewController.swift */,
 				B7D8312D1FFF31A900A241BC /* ItemDetailViewController.swift */,
 				B7D831331FFF7EE600A241BC /* ListDetailViewController.swift */,
-				A84C89E1200206F100822C55 /* AllListsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,10 +340,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GRCRJCWSL;
+				DEVELOPMENT_TEAM = 49T2S8SJWE;
 				INFOPLIST_FILE = "$(SRCROOT)/Checklists/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = khanh.nguyen.Checklists;
+				PRODUCT_BUNDLE_IDENTIFIER = nguyenphuckhanh.Checklists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -355,10 +355,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GRCRJCWSL;
+				DEVELOPMENT_TEAM = 49T2S8SJWE;
 				INFOPLIST_FILE = "$(SRCROOT)/Checklists/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = khanh.nguyen.Checklists;
+				PRODUCT_BUNDLE_IDENTIFIER = nguyenphuckhanh.Checklists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
