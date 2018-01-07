@@ -130,7 +130,7 @@
                                 <action selector="cancel" destination="k3g-Ho-pbI" id="ieF-Y6-rJD"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="cvJ-GW-gc6">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="cvJ-GW-gc6">
                             <connections>
                                 <action selector="done" destination="k3g-Ho-pbI" id="JbY-mT-n1I"/>
                             </connections>
@@ -189,7 +189,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G1x-m4-tes"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Checklists" id="RMs-64-LwS"/>
+                    <navigationItem key="navigationItem" title="Checklists" id="RMs-64-LwS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLG-nY-nHT">
+                            <connections>
+                                <segue destination="P0I-KK-lFd" kind="presentation" identifier="AddChecklist" id="RXY-nv-Dwq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="6V1-W7-C1A" id="XmM-eT-gBe"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ShowChecklist" id="rCi-a8-rUq"/>
@@ -294,7 +300,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5e0-Fq-J7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-323" y="989"/>
+            <point key="canvasLocation" x="-398" y="989"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
