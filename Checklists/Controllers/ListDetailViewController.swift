@@ -35,6 +35,7 @@ class ListDetailViewController: UITableViewController {
         super.viewWillAppear(animated)
         textField.becomeFirstResponder()
         doneBarButton.isEnabled = false
+
     }
     @IBAction func cancel() {
         delegate?.listDetailViewControllerDidCancel(self)

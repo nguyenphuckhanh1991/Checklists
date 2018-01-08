@@ -154,7 +154,7 @@
                                 <action selector="cancel" destination="k3g-Ho-pbI" id="ieF-Y6-rJD"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="cvJ-GW-gc6">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="cvJ-GW-gc6">
                             <connections>
                                 <action selector="done" destination="k3g-Ho-pbI" id="9rW-mb-sp5"/>
                             </connections>
