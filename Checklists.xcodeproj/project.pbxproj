@@ -100,9 +100,9 @@
 		B70874B71FFF0C220066D55D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B7D831271FFF232300A241BC /* ChecklistItem.swift */,
-				B7D831311FFF791600A241BC /* Checklist.swift */,
 				A84C89E320020DD100822C55 /* DataModel.swift */,
+				B7D831311FFF791600A241BC /* Checklist.swift */,
+				B7D831271FFF232300A241BC /* ChecklistItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
