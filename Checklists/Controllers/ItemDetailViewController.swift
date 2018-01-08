@@ -11,8 +11,7 @@ import UIKit
 protocol ItemDetailViewControllerDelegate: class {
     func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
-    func ItemDetailViewController(_ controller: ItemDetailViewController,
-                               didFinishEditing item: ChecklistItem)
+    func ItemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
 }
 class ItemDetailViewController: UITableViewController {
     weak var delegate: ItemDetailViewControllerDelegate?
@@ -47,12 +46,6 @@ class ItemDetailViewController: UITableViewController {
         }
     }
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil

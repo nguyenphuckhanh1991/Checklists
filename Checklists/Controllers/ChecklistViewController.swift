@@ -9,7 +9,6 @@
 import UIKit
 
 class ChecklistViewController: UIViewController {
-    var items: [ChecklistItem] = []
     var checklist: Checklist!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -19,7 +18,6 @@ class ChecklistViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    // MARK: Button Function
     // MARK: Function
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1001) as! UILabel
@@ -28,6 +26,7 @@ class ChecklistViewController: UIViewController {
         } else {
             label.text = ""
         }
+        label.textColor = view.tintColor
     }
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
@@ -54,15 +53,14 @@ extension ChecklistViewController: UITableViewDataSource {
         return checklist.items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "ChecklistItem", for: indexPath)
         let item = checklist.items[indexPath.row]
         configureText(for: cell, with: item)
         configureCheckmark(for: cell, with: item)
         return cell
     }
-    func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCellEditingStyle,
-                   forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         checklist.items.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
@@ -94,7 +92,7 @@ extension ChecklistViewController: ItemDetailViewControllerDelegate {
     }
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem) {
         let newRowIndex = checklist.items.count
-        items.append(item)
+        checklist.items.append(item)
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)

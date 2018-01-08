@@ -116,7 +116,6 @@ extension AllListsViewController: ListDetailViewControllerDelegate {
 }
 extension AllListsViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        // Was the back button tapped?
         if viewController === self {
             dataModel.indexOfSelectedChecklist = -1
         }
